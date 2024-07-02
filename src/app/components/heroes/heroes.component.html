@@ -1,0 +1,23 @@
+<div class="container" *ngIf="heroes.length>0">
+  <h1 *ngIf="searchHeroe==undefined">Héroes <small>Marvel y DC</small></h1>
+  <h1 *ngIf="searchHeroe!=undefined">Buscar: <small>{{searchHeroe}}</small></h1>
+  <hr />
+  <div class="card-container">
+    <div class="card animated fadeIn" *ngFor="let heroe of heroes; let i=index">
+      <img src="{{heroe.img}}" alt="{{heroe.nombre}}" />
+      <div class="card-content">
+        <h3>{{heroe.nombre}}</h3>
+        <p>{{heroe.aparicion|date}}</p>
+        <a class="btn" [routerLink]="['/heroe',i]">Ver más</a>
+      </div>
+    </div>
+    <!-- Añade más tarjetas según sea necesario -->
+  </div>
+</div>
+
+<div class="jumbotron animated fadeIn fast" *ngIf="heroes.length==0">
+  <div class="jumbotron-content">
+    <h1>Sin resultados…</h1>
+    <p>No existen resultados con el termino: {{searchHeroe}}</p>
+  </div>
+</div>

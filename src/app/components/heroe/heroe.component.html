@@ -1,0 +1,29 @@
+<div class="container animated fadeIn">
+  <h1>
+    {{heroe.nombre|uppercase}} <small>{{heroe.aparicion|date:"y"}}</small>
+  </h1>
+  <hr />
+  <div style="display: flex;">
+    <div>
+      <img [src]="heroe.img" [alt]="heroe.nombre" />
+    </div>
+    <div class="">
+      <h2>{{heroe.nombre}}</h2>
+      <hr />
+      <p>{{heroe.bio}}</p>
+      <img
+        src="assets/img/dc.png"
+        alt="dc"
+        class="casa"
+        *ngIf="heroe.casa=='DC'"
+      />
+      <img
+        src="assets/img/marve.png"
+        alt="marve"
+        class="casa"
+        *ngIf="heroe.casa=='Marvel'"
+      />
+    </div>
+  </div>
+  <button class="btn" (click)="returnPage()">Regresar</button>
+</div>

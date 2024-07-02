@@ -1,12 +1,22 @@
 <nav class="navbar">
-  <a href="#">
-    <img src="../../../../assets/imgs/A-64.png" alt="logo" />
+  <a routerLink="home">
+    <img src="assets/img/A-64.png" alt="logo" />
   </a>
-  <a class="navbar-brand">Mi Sitio</a>
   <div class="navbar-links">
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Sobre Nosotros</a>
-    <a class="active">Contacto</a>
+    <a routerLink="home" routerLinkActive="active">Home</a>
+    <a routerLink="heroes" routerLinkActive="active">Heroes</a>
+    <a routerLink="about" routerLinkActive="active">Sobre Nosotros</a>
+    <!-- <a routerLink="z" routerLinkActive="active">Contacto</a> -->
+    <form class="navbar-search">
+      <input
+        type="text"
+        placeholder="Buscar..."
+        #searchheroe
+        (keyup.enter)="searchHeroe(searchheroe.value)"
+      />
+      <button type="button" (click)="searchHeroe(searchheroe.value)">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
   </div>
 </nav>
